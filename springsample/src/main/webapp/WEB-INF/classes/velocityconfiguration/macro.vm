@@ -1,0 +1,46 @@
+#macro( link $path )
+#set( $contextRoot = "/" )
+#set( $delimiter = "" )
+#if( ! $path.startsWith("/") )#set( $delimiter = "/" )#end
+$link.relative("${contextRoot}$!{delimiter}${path}")#end
+
+##
+## form input 部品
+##
+## 前提：
+## #springBind() していること ( $staus を使う )
+## #foreach ( $option in $options.keySet() ) でループしていること
+## checkboxes の場合、選択された値リストを $values で参照できること
+
+## name 属性
+#macro(name)
+name="$status.expression" #end
+
+## value 属性
+#macro(value)
+#if( $option ) value="$option" #else value ="$status.value" #end #end
+
+## checked 属性
+#macro(checked)
+#if( "$status.value" == "$option" || $values.contains("$option") ) checked="checked" #end #end
+
+## selected 属性
+#macro(selected)
+#if( "$status.value" == "$option" || $values.contains("$option") ) selected #end #end
+
+## 未選択を送信する hidden input 要素
+#macro(inputNothing)
+<input type="hidden" name="_${status.expression}" value="nothing">#end
+
+## options の value(ラベル)表示
+#macro(label)
+$options.get($option)#end
+
+##
+##  表示内容(text)に含まれる改行文字を '<br/>' に変換するマクロ
+##
+##引数
+##  text : 改行文字が含まれる表示内容
+#macro( nl2br $text )
+$!{text.replaceAll("\r\n|\r|\n","<br/>")}
+#end

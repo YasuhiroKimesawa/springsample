@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tools>
+  <toolbox scope="request">
+    <tool class="org.apache.velocity.tools.view.LinkTool"/>
+    <tool class="org.apache.velocity.tools.view.BrowserTool"/>
+  </toolbox>
+</tools>

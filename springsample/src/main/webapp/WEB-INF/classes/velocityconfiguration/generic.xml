@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tools>
+  <toolbox scope="application">
+    <tool class="org.apache.velocity.tools.generic.EscapeTool" />
+    <tool class="org.apache.velocity.tools.generic.DateTool"
+          format="yyyy/MM/dd HH:mm:ss"/>
+    <tool class="org.apache.velocity.tools.generic.NumberTool" />
+    <tool class="org.apache.velocity.tools.generic.DisplayTool"/>
+    <tool class="org.apache.velocity.tools.generic.RenderTool"/>
+
+  </toolbox>
+</tools>
+

@@ -1,0 +1,14 @@
+<html>
+<body>
+<h1>名前を入力</h1>
+<form method="POST" action="$link.relative('/')">
+    #springFormInput("user.name")
+    <input type="submit">
+</form>
+<p>
+  #if($user.name != "")
+    $!user.name さんが認証されました.
+  #end
+</p>
+</body>
+</html>
